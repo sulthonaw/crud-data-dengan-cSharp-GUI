@@ -1,0 +1,13 @@
+D:\dotnet\DataMahasiswa\bin\Debug\DataMahasiswa.exe.config
+D:\dotnet\DataMahasiswa\bin\Debug\DataMahasiswa.exe
+D:\dotnet\DataMahasiswa\bin\Debug\DataMahasiswa.pdb
+D:\dotnet\DataMahasiswa\obj\Debug\DataMahasiswa.csproj.AssemblyReference.cache
+D:\dotnet\DataMahasiswa\obj\Debug\DataMahasiswa.csproj.SuggestedBindingRedirects.cache
+D:\dotnet\DataMahasiswa\obj\Debug\DataMahasiswa.Properties.Resources.resources
+D:\dotnet\DataMahasiswa\obj\Debug\DataMahasiswa.csproj.GenerateResource.cache
+D:\dotnet\DataMahasiswa\obj\Debug\DataMahasiswa.csproj.CoreCompileInputs.cache
+D:\dotnet\DataMahasiswa\obj\Debug\DataMahasiswa.exe
+D:\dotnet\DataMahasiswa\obj\Debug\DataMahasiswa.pdb
+D:\dotnet\DataMahasiswa\obj\Debug\DataMahasiswa.Home.resources
+D:\dotnet\DataMahasiswa\obj\Debug\DataMahasiswa.TambahData.resources
+D:\dotnet\DataMahasiswa\obj\Debug\DataMahasiswa.UpdateData.resources
