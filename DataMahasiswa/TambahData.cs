@@ -20,7 +20,7 @@ namespace DataMahasiswa
 
         private void TambahData_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         SqlConnection conn = new KoneksiDatabase().GetConnectionDBSekolah();

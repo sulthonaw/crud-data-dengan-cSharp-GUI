@@ -157,6 +157,7 @@
             // gaji
             // 
             this.gaji.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.gaji.DataPropertyName = "gaji";
             this.gaji.HeaderText = "Gaji";
             this.gaji.Name = "gaji";
             this.gaji.ReadOnly = true;

@@ -24,14 +24,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonInsert;
         private System.Windows.Forms.Button buttonRefresh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewButtonColumn btnDeleteData;
+        private System.Windows.Forms.Button buttonRestore;
         private System.Windows.Forms.DataGridViewButtonColumn edit;
+        private System.Windows.Forms.DataGridViewButtonColumn btnDeleteData;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn nip;
         private System.Windows.Forms.DataGridViewTextBoxColumn nama;
         private System.Windows.Forms.DataGridViewTextBoxColumn gender;
         private System.Windows.Forms.DataGridViewTextBoxColumn mataPelajaran;
-        private System.Windows.Forms.Button buttonRestore;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gaji;
     }
 }
 

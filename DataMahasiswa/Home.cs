@@ -21,20 +21,21 @@ namespace DataMahasiswa
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnDeleteData = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.nip = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nama = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mataPelajaran = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonInsert = new System.Windows.Forms.Button();
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.buttonRestore = new System.Windows.Forms.Button();
+            this.edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnDeleteData = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nip = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nama = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mataPelajaran = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gaji = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,8 +45,8 @@ namespace DataMahasiswa
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -53,93 +54,25 @@ namespace DataMahasiswa
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.btnDeleteData,
             this.edit,
+            this.btnDeleteData,
+            this.id,
             this.nip,
             this.nama,
             this.gender,
-            this.mataPelajaran});
+            this.mataPelajaran,
+            this.gaji});
             this.dataGridView1.Location = new System.Drawing.Point(106, 110);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 4;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.Size = new System.Drawing.Size(590, 277);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.Size = new System.Drawing.Size(595, 277);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // btnDeleteData
-            // 
-            this.btnDeleteData.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.btnDeleteData.HeaderText = "Delete";
-            this.btnDeleteData.MinimumWidth = 70;
-            this.btnDeleteData.Name = "btnDeleteData";
-            this.btnDeleteData.ReadOnly = true;
-            this.btnDeleteData.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.btnDeleteData.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.btnDeleteData.Text = "Delete";
-            this.btnDeleteData.UseColumnTextForButtonValue = true;
-            this.btnDeleteData.Width = 70;
-            // 
-            // edit
-            // 
-            this.edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.edit.HeaderText = "Edit";
-            this.edit.MinimumWidth = 70;
-            this.edit.Name = "edit";
-            this.edit.ReadOnly = true;
-            this.edit.Text = "Edit";
-            this.edit.UseColumnTextForButtonValue = true;
-            this.edit.Width = 70;
-            // 
-            // nip
-            // 
-            this.nip.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.nip.DataPropertyName = "nip";
-            this.nip.FillWeight = 294.7369F;
-            this.nip.HeaderText = "NIP";
-            this.nip.MinimumWidth = 120;
-            this.nip.Name = "nip";
-            this.nip.ReadOnly = true;
-            this.nip.Width = 120;
-            // 
-            // nama
-            // 
-            this.nama.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.nama.DataPropertyName = "nama";
-            this.nama.FillWeight = 21.92372F;
-            this.nama.HeaderText = "Nama";
-            this.nama.MinimumWidth = 100;
-            this.nama.Name = "nama";
-            this.nama.ReadOnly = true;
-            // 
-            // gender
-            // 
-            this.gender.DataPropertyName = "gender";
-            this.gender.FillWeight = 30.39933F;
-            this.gender.HeaderText = "Gender";
-            this.gender.Name = "gender";
-            this.gender.ReadOnly = true;
-            // 
-            // mataPelajaran
-            // 
-            this.mataPelajaran.DataPropertyName = "mataPelajaran";
-            this.mataPelajaran.FillWeight = 52.94007F;
-            this.mataPelajaran.HeaderText = "Mata Pelajaran";
-            this.mataPelajaran.Name = "mataPelajaran";
-            this.mataPelajaran.ReadOnly = true;
             // 
             // label1
             // 
@@ -183,6 +116,90 @@ namespace DataMahasiswa
             this.buttonRestore.UseVisualStyleBackColor = true;
             this.buttonRestore.Click += new System.EventHandler(this.buttonRestore_Click);
             // 
+            // edit
+            // 
+            this.edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.edit.Frozen = true;
+            this.edit.HeaderText = "Edit";
+            this.edit.MinimumWidth = 70;
+            this.edit.Name = "edit";
+            this.edit.ReadOnly = true;
+            this.edit.Text = "Edit";
+            this.edit.UseColumnTextForButtonValue = true;
+            this.edit.Width = 70;
+            // 
+            // btnDeleteData
+            // 
+            this.btnDeleteData.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.btnDeleteData.Frozen = true;
+            this.btnDeleteData.HeaderText = "Delete";
+            this.btnDeleteData.MinimumWidth = 70;
+            this.btnDeleteData.Name = "btnDeleteData";
+            this.btnDeleteData.ReadOnly = true;
+            this.btnDeleteData.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.btnDeleteData.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btnDeleteData.Text = "Delete";
+            this.btnDeleteData.UseColumnTextForButtonValue = true;
+            this.btnDeleteData.Width = 70;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // nip
+            // 
+            this.nip.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.nip.DataPropertyName = "nip";
+            this.nip.FillWeight = 294.7369F;
+            this.nip.HeaderText = "NIP";
+            this.nip.MinimumWidth = 120;
+            this.nip.Name = "nip";
+            this.nip.ReadOnly = true;
+            this.nip.Width = 120;
+            // 
+            // nama
+            // 
+            this.nama.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nama.DataPropertyName = "nama";
+            this.nama.FillWeight = 21.92372F;
+            this.nama.HeaderText = "Nama";
+            this.nama.MinimumWidth = 100;
+            this.nama.Name = "nama";
+            this.nama.ReadOnly = true;
+            // 
+            // gender
+            // 
+            this.gender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.gender.DataPropertyName = "gender";
+            this.gender.FillWeight = 30.39933F;
+            this.gender.HeaderText = "Gender";
+            this.gender.MinimumWidth = 100;
+            this.gender.Name = "gender";
+            this.gender.ReadOnly = true;
+            // 
+            // mataPelajaran
+            // 
+            this.mataPelajaran.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.mataPelajaran.DataPropertyName = "mataPelajaran";
+            this.mataPelajaran.FillWeight = 52.94007F;
+            this.mataPelajaran.HeaderText = "Mata Pelajaran";
+            this.mataPelajaran.MinimumWidth = 120;
+            this.mataPelajaran.Name = "mataPelajaran";
+            this.mataPelajaran.ReadOnly = true;
+            // 
+            // gaji
+            // 
+            this.gaji.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.gaji.DataPropertyName = "gaji";
+            this.gaji.HeaderText = "Gaji";
+            this.gaji.MinimumWidth = 100;
+            this.gaji.Name = "gaji";
+            this.gaji.ReadOnly = true;
+            // 
             // Home
             // 
             this.BackColor = System.Drawing.Color.White;
@@ -207,7 +224,6 @@ namespace DataMahasiswa
 
         private void TampilData()
         {
-
 
             string query = "SELECT * FROM tb_guru WHERE isDeleted='False'";
 
@@ -246,7 +262,7 @@ namespace DataMahasiswa
 
                     if (ms)
                     {
-                        string query = $"UPDATE tb_guru SET isDeleted = 1 WHERE nip = {dataGridView1.Rows[e.RowIndex].Cells["nip"].Value.ToString()}";
+                        string query = $"UPDATE tb_guru SET isDeleted = 1 WHERE id = {dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString()}";
 
                         SqlCommand cmd = new SqlCommand(query, conn);
 
@@ -261,7 +277,7 @@ namespace DataMahasiswa
                     MessageBox.Show("Tidak bisa didelete.", "Alert");
                 }
             }
-            else if (e.ColumnIndex == 2)
+            else if (e.ColumnIndex == 0)
             {
                 try
                 {
