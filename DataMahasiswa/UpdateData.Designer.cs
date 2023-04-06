@@ -196,6 +196,7 @@
             this.buttonReset.TabIndex = 3;
             this.buttonReset.Text = "Reset";
             this.buttonReset.UseVisualStyleBackColor = true;
+            this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
             // buttonTambah
             // 
@@ -204,8 +205,9 @@
             this.buttonTambah.Name = "buttonTambah";
             this.buttonTambah.Size = new System.Drawing.Size(240, 32);
             this.buttonTambah.TabIndex = 2;
-            this.buttonTambah.Text = "Tambah";
+            this.buttonTambah.Text = "Update";
             this.buttonTambah.UseVisualStyleBackColor = true;
+            this.buttonTambah.Click += new System.EventHandler(this.buttonTambah_Click);
             // 
             // textBoxNama
             // 
@@ -244,7 +246,9 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.panel1);
             this.Name = "UpdateData";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Update data";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UpdateData_FormClosing);
             this.Load += new System.EventHandler(this.UpdateData_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

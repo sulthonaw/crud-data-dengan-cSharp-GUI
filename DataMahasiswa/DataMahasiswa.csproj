@@ -67,6 +67,12 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="RestoreData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RestoreData.Designer.cs">
+      <DependentUpon>RestoreData.cs</DependentUpon>
+    </Compile>
     <Compile Include="TambahData.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     </Compile>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RestoreData.resx">
+      <DependentUpon>RestoreData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TambahData.resx">
       <DependentUpon>TambahData.cs</DependentUpon>

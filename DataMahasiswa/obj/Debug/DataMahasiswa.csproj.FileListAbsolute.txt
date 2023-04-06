@@ -11,3 +11,17 @@ D:\dotnet\DataMahasiswa\obj\Debug\DataMahasiswa.pdb
 D:\dotnet\DataMahasiswa\obj\Debug\DataMahasiswa.Home.resources
 D:\dotnet\DataMahasiswa\obj\Debug\DataMahasiswa.TambahData.resources
 D:\dotnet\DataMahasiswa\obj\Debug\DataMahasiswa.UpdateData.resources
+D:\github\crud-data-dengan-cSharp-GUI\DataMahasiswa\bin\Debug\DataMahasiswa.exe.config
+D:\github\crud-data-dengan-cSharp-GUI\DataMahasiswa\bin\Debug\DataMahasiswa.exe
+D:\github\crud-data-dengan-cSharp-GUI\DataMahasiswa\bin\Debug\DataMahasiswa.pdb
+D:\github\crud-data-dengan-cSharp-GUI\DataMahasiswa\obj\Debug\DataMahasiswa.csproj.AssemblyReference.cache
+D:\github\crud-data-dengan-cSharp-GUI\DataMahasiswa\obj\Debug\DataMahasiswa.csproj.SuggestedBindingRedirects.cache
+D:\github\crud-data-dengan-cSharp-GUI\DataMahasiswa\obj\Debug\DataMahasiswa.Home.resources
+D:\github\crud-data-dengan-cSharp-GUI\DataMahasiswa\obj\Debug\DataMahasiswa.TambahData.resources
+D:\github\crud-data-dengan-cSharp-GUI\DataMahasiswa\obj\Debug\DataMahasiswa.Properties.Resources.resources
+D:\github\crud-data-dengan-cSharp-GUI\DataMahasiswa\obj\Debug\DataMahasiswa.UpdateData.resources
+D:\github\crud-data-dengan-cSharp-GUI\DataMahasiswa\obj\Debug\DataMahasiswa.csproj.GenerateResource.cache
+D:\github\crud-data-dengan-cSharp-GUI\DataMahasiswa\obj\Debug\DataMahasiswa.csproj.CoreCompileInputs.cache
+D:\github\crud-data-dengan-cSharp-GUI\DataMahasiswa\obj\Debug\DataMahasiswa.exe
+D:\github\crud-data-dengan-cSharp-GUI\DataMahasiswa\obj\Debug\DataMahasiswa.pdb
+D:\github\crud-data-dengan-cSharp-GUI\DataMahasiswa\obj\Debug\DataMahasiswa.RestoreData.resources

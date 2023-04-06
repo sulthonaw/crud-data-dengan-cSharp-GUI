@@ -31,6 +31,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nama;
         private System.Windows.Forms.DataGridViewTextBoxColumn gender;
         private System.Windows.Forms.DataGridViewTextBoxColumn mataPelajaran;
+        private System.Windows.Forms.Button buttonRestore;
     }
 }
 
