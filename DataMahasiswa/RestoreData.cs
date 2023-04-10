@@ -76,14 +76,19 @@ namespace DataMahasiswa
                     SqlCommand cmd = new SqlCommand(query, conn);
 
                     conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
+                    int dataYangDikembalikan = cmd.ExecuteNonQuery();
+
+                    MessageBox.Show($"Berhasil: {dataYangDikembalikan}\nGagal: {dataGridView1.Rows.Count - dataYangDikembalikan}", "Info");
                     
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Tidak bisa direstore. and {ex.Message}", "Alert");
+            } finally
+            {
+                conn.Close();
+                TampilData();
             }
         }
     }

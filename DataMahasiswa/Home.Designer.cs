@@ -33,6 +33,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gender;
         private System.Windows.Forms.DataGridViewTextBoxColumn mataPelajaran;
         private System.Windows.Forms.DataGridViewTextBoxColumn gaji;
+        private System.Windows.Forms.Label labelTotalData;
     }
 }
 
