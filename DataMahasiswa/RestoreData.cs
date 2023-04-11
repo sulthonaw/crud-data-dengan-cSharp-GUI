@@ -76,7 +76,7 @@ namespace DataMahasiswa
                     SqlCommand cmd = new SqlCommand(query, conn);
 
                     conn.Open();
-                    int dataYangDikembalikan = cmd.ExecuteNonQuery();
+                    int dataYangDikembalikan = cmd.ExecuteNonQuery() - 1;
 
                     MessageBox.Show($"Berhasil: {dataYangDikembalikan}\nGagal: {dataGridView1.Rows.Count - dataYangDikembalikan}", "Info");
                     

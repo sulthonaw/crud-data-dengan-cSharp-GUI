@@ -246,7 +246,7 @@ namespace DataMahasiswa
         private void TampilData()
         {
 
-            string query = "SELECT * FROM tb_guru WHERE isDeleted='False'";
+            string query = "EXEC TampilData";
 
             SqlCommand cmd = new SqlCommand(query, conn);
 
@@ -301,7 +301,7 @@ namespace DataMahasiswa
 
                     if (ms)
                     {
-                        string query = $"UPDATE tb_guru SET isDeleted = 1 WHERE id = {dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString()}";
+                        string query = $"UPDATE tb_guru SET isDeleted = '1', updatedAt = '{DateTime.Now}' WHERE id = {dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString()}";
 
                         SqlCommand cmd = new SqlCommand(query, conn);
 
