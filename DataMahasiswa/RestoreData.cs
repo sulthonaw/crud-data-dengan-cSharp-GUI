@@ -71,21 +71,28 @@ namespace DataMahasiswa
             {
                 if (MessageBox.Show($"Apakah anda ingin merestore data?", "Alert", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    string query = $"UPDATE tb_guru SET isDeleted = 0  WHERE isDeleted=1 AND NOT nip IN (SELECT nip FROM tb_guru WHERE isDeleted=0)";
+                    string query = $"UPDATE tb_guru SET isDeleted = '0', updatedAt = '{DateTime.Now}' WHERE isDeleted=1 AND NOT nip IN (SELECT nip FROM tb_guru WHERE isDeleted=0)";
 
                     SqlCommand cmd = new SqlCommand(query, conn);
 
                     conn.Open();
                     int dataYangDikembalikan = cmd.ExecuteNonQuery() - 1;
 
-                    MessageBox.Show($"Berhasil: {dataYangDikembalikan}\nGagal: {dataGridView1.Rows.Count - dataYangDikembalikan}", "Info");
-                    
+                    if (dataYangDikembalikan == 0)
+                    {
+                        MessageBox.Show("Tidak ada data yang dikembalikan", "Alert");
+                    } else
+                    {
+                        MessageBox.Show($"Berhasil: {dataYangDikembalikan}\nGagal: {dataGridView1.Rows.Count - dataYangDikembalikan}", "Info");
+                    }
+
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Tidak bisa direstore. and {ex.Message}", "Alert");
-            } finally
+            }
+            finally
             {
                 conn.Close();
                 TampilData();

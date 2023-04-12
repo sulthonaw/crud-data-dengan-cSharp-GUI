@@ -23,7 +23,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonInsert;
-        private System.Windows.Forms.Button buttonRefresh;
         private System.Windows.Forms.Button buttonRestore;
         private System.Windows.Forms.DataGridViewButtonColumn edit;
         private System.Windows.Forms.DataGridViewButtonColumn btnDeleteData;
