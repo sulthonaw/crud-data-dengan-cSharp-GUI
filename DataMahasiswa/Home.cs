@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
@@ -21,8 +22,8 @@ namespace DataMahasiswa
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnDeleteData = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -37,6 +38,8 @@ namespace DataMahasiswa
             this.buttonRestore = new System.Windows.Forms.Button();
             this.labelTotalData = new System.Windows.Forms.Label();
             this.buttonRefresh = new System.Windows.Forms.Button();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
+            this.buttonSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,8 +49,10 @@ namespace DataMahasiswa
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeColumns = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -69,9 +74,9 @@ namespace DataMahasiswa
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 4;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Size = new System.Drawing.Size(595, 277);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
@@ -176,7 +181,7 @@ namespace DataMahasiswa
             this.buttonInsert.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.buttonInsert.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.buttonInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonInsert.Location = new System.Drawing.Point(600, 64);
+            this.buttonInsert.Location = new System.Drawing.Point(600, 28);
             this.buttonInsert.Name = "buttonInsert";
             this.buttonInsert.Size = new System.Drawing.Size(103, 36);
             this.buttonInsert.TabIndex = 2;
@@ -215,7 +220,7 @@ namespace DataMahasiswa
             this.buttonRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.buttonRefresh.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.buttonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRefresh.Location = new System.Drawing.Point(12, 12);
+            this.buttonRefresh.Location = new System.Drawing.Point(108, 405);
             this.buttonRefresh.Name = "buttonRefresh";
             this.buttonRefresh.Size = new System.Drawing.Size(64, 28);
             this.buttonRefresh.TabIndex = 7;
@@ -223,11 +228,36 @@ namespace DataMahasiswa
             this.buttonRefresh.UseVisualStyleBackColor = false;
             this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.textBoxSearch.Location = new System.Drawing.Point(487, 85);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(165, 25);
+            this.textBoxSearch.TabIndex = 8;
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.buttonSearch.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSearch.Font = new System.Drawing.Font("Segoe UI", 6.25F);
+            this.buttonSearch.Location = new System.Drawing.Point(658, 85);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(45, 25);
+            this.buttonSearch.TabIndex = 9;
+            this.buttonSearch.Text = "Search";
+            this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
             // Home
             // 
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(802, 458);
+            this.Controls.Add(this.buttonSearch);
+            this.Controls.Add(this.textBoxSearch);
             this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.labelTotalData);
             this.Controls.Add(this.buttonRestore);
@@ -237,7 +267,7 @@ namespace DataMahasiswa
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Data Mahasiswa";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.Home_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -325,7 +355,8 @@ namespace DataMahasiswa
                 try
                 {
                     string dataID = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString();
-                    new UpdateData(dataID).ShowDialog();
+                    string dataNIP = dataGridView1.Rows[e.RowIndex].Cells["nip"].Value.ToString();
+                    new UpdateData(dataID, dataNIP).ShowDialog();
                     TampilData();
                 }
                 catch (Exception ex)
@@ -344,6 +375,23 @@ namespace DataMahasiswa
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
             TampilData();
+        }
+
+        private void buttonSearch_Click(object sender, EventArgs e)
+        {
+            string query = null,
+                searchValue = textBoxSearch.Text;
+
+            query = $"SELECT * FROM tb_guru WHERE (nip LIKE '%{searchValue}%' OR nama LIKE '%{searchValue}%' OR mataPelajaran LIKE '%{searchValue}%' OR gaji LIKE '%{searchValue}%' OR gender LIKE '%{searchValue}%') AND isDeleted = '0'";
+            
+            SqlCommand cmd = new SqlCommand(query, conn);
+            conn.Open();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            dataGridView1.DataSource = table;
+            conn.Close();
+
         }
     }
 }

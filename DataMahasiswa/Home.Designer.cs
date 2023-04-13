@@ -34,6 +34,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gaji;
         private System.Windows.Forms.Label labelTotalData;
         private System.Windows.Forms.Button buttonRefresh;
+        private System.Windows.Forms.TextBox textBoxSearch;
+        private System.Windows.Forms.Button buttonSearch;
     }
 }
 

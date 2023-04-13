@@ -14,12 +14,14 @@ namespace DataMahasiswa
     public partial class UpdateData : Form
     {
         private int _idData;
+        private string _NIP;
 
-        public UpdateData(string id)
+        public UpdateData(string id, string nip)
         {
             InitializeComponent();
 
             _idData = Convert.ToInt32(id);
+            _NIP = nip;
 
             try
             {
@@ -42,7 +44,8 @@ namespace DataMahasiswa
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            } finally
+            }
+            finally
             {
                 conn.Close();
             }
@@ -57,8 +60,26 @@ namespace DataMahasiswa
 
         }
 
+        // TODO: FIX BUTTON ERROR
+        // CASE: JIKA NIP PERTAMA SAMA, MAKA NIP SELANJUTNYA AKAN ERROR (ERROR CONNECTION)
         private void buttonTambah_Click(object sender, EventArgs e)
         {
+            string query = $"SELECT * FROM tb_guru WHERE nip !='{_NIP}'";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            if (conn.State == ConnectionState.Closed) conn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                if (dr["nip"].ToString() == textBoxNip.Text)
+                {
+                    MessageBox.Show("NIP sudah terdaftar.");
+                    return;
+                }
+            }
+            dr.Close();
+            conn.Close();
+
             bool checkRadioButton = true;
             char gender = '0';
             if (radioButtonL.Checked)
@@ -78,12 +99,12 @@ namespace DataMahasiswa
             }
             else
             {
-                string query = $"UPDATE tb_guru SET nip='{textBoxNip.Text}', nama='{textBoxNama.Text}', tanggalLahir='{dateTimePickerTanggalLahir.Value}', gender='{gender}', mataPelajaran='{textBoxMataPelajaran.Text}', gaji='{textBoxGaji.Text}', updatedAt='{DateTime.Now}' WHERE id={_idData}";
+                query = $"UPDATE tb_guru SET nip='{textBoxNip.Text}', nama='{textBoxNama.Text}', tanggalLahir='{dateTimePickerTanggalLahir.Value}', gender='{gender}', mataPelajaran='{textBoxMataPelajaran.Text}', gaji='{textBoxGaji.Text}', updatedAt='{DateTime.Now}' WHERE id={_idData}";
 
-                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd = new SqlCommand(query, conn);
                 try
                 {
-                    conn.Open();
+                    if (conn.State == ConnectionState.Closed) conn.Open();
                     cmd.ExecuteNonQuery();
                     if (MessageBox.Show("Data berhasil diupdate!", "Succes") == DialogResult.OK)
                     {
@@ -95,12 +116,11 @@ namespace DataMahasiswa
                 {
                     MessageBox.Show(ex.Message);
                 }
-                finally
-                {
-                    conn.Close();
-                }
             }
+
+            if (conn.State == ConnectionState.Open) conn.Close();
         }
+
         void reset()
         {
             textBoxNip.Text = "";
