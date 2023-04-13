@@ -78,19 +78,22 @@ namespace DataMahasiswa
                     conn.Open();
                     int dataYangDikembalikan = cmd.ExecuteNonQuery() - 1;
 
-                    if (dataYangDikembalikan == 0)
+                    if (dataYangDikembalikan == 0 && dataGridView1.Rows.Count == 0)
                     {
                         MessageBox.Show("Tidak ada data yang dikembalikan", "Alert");
-                    } else
+                    } else if(dataYangDikembalikan > 0)
                     {
                         MessageBox.Show($"Berhasil: {dataYangDikembalikan}\nGagal: {dataGridView1.Rows.Count - dataYangDikembalikan}", "Info");
+                    } else if (dataGridView1.Rows.Count > 0 && dataYangDikembalikan == 0)
+                    {
+                        MessageBox.Show("Data tidak bisa dikembalikan", "Alert");
                     }
 
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Tidak bisa direstore. and {ex.Message}", "Alert");
+                MessageBox.Show(ex.Message, "Error");
             }
             finally
             {

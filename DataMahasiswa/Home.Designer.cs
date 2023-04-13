@@ -33,6 +33,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn mataPelajaran;
         private System.Windows.Forms.DataGridViewTextBoxColumn gaji;
         private System.Windows.Forms.Label labelTotalData;
+        private System.Windows.Forms.Button buttonRefresh;
     }
 }
 

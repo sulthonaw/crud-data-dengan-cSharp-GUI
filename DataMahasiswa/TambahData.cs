@@ -25,63 +25,62 @@ namespace DataMahasiswa
 
         SqlConnection conn = new KoneksiDatabase().GetConnectionDBSekolah();
 
-        // TODO: Perbaiki method button insert jika data nip sama dengan yang ada di DB, maka tidak lolos
         private void buttonTambah_Click(object sender, EventArgs e)
         {
 
-            string query = $"SELECT nip FROM tb_guru WHERE nip={textBoxNip.Text}";
+            string query = $"SELECT nip FROM tb_guru WHERE nip='{textBoxNip.Text}'";
             SqlCommand cmd = new SqlCommand(query, conn);
             conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
-            
-            if (dr.Read())
+            string nip = null;
+            if (dr.Read()) nip = dr["nip"].ToString();
+            conn.Close();
+
+            if (nip == textBoxNip.Text)
             {
-                if (dr["nip"].ToString() == textBoxNip.Text)
+                MessageBox.Show("Data dengan nip yang anda masukkan, sudah ada.", "Alert");
+            }
+            else
+            {
+                bool checkRadioButton = true;
+                char gender = '0';
+                if (radioButtonL.Checked)
                 {
-                    MessageBox.Show("Data sudah ada.", "Alert");
+                    checkRadioButton = false;
+                    gender = 'L';
+                }
+                else if (radioButtonP.Checked)
+                {
+                    checkRadioButton = false;
+                    gender = 'P';
+                }
+
+                if (textBoxNip.Text == "" || textBoxNama.Text == "" || textBoxGaji.Text == "" || checkRadioButton || textBoxMataPelajaran.Text == "")
+                {
+                    MessageBox.Show("Data belum valid");
                 }
                 else
                 {
-                    bool checkRadioButton = true;
-                    char gender = '0';
-                    if (radioButtonL.Checked)
+                    query = $"INSERT INTO tb_guru VALUES ('{textBoxNip.Text}', '{textBoxNama.Text}', '{dateTimePickerTanggalLahir.Value}', '{gender}', '{textBoxMataPelajaran.Text}', '{textBoxGaji.Text}',  '0', '{DateTime.Now}', '{DateTime.Now}')";
+
+                    cmd = new SqlCommand(query, conn);
+                    try
                     {
-                        checkRadioButton = false;
-                        gender = 'L';
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                        if (MessageBox.Show("Data berhasil ditambahkan!", "Succes") == DialogResult.OK) this.Close();
                     }
-                    else if (radioButtonP.Checked)
+                    catch (SqlException ex)
                     {
-                        checkRadioButton = false;
-                        gender = 'P';
+                        MessageBox.Show(ex.Message);
+                    }
+                    finally
+                    {
+                        conn.Close();
                     }
 
-                    if (textBoxNip.Text == "" || textBoxNama.Text == "" || textBoxGaji.Text == "" || checkRadioButton || textBoxMataPelajaran.Text == "")
-                    {
-                        MessageBox.Show("Data belum valid");
-                    }
-                    else
-                    {
-                        query = $"INSERT INTO tb_guru VALUES ('{textBoxNip.Text}', '{textBoxNama.Text}', '{dateTimePickerTanggalLahir.Value}', '{gender}', '{textBoxMataPelajaran.Text}', '{textBoxGaji.Text}',  '0', '{DateTime.Now}', '{DateTime.Now}')";
-
-                        cmd = new SqlCommand(query, conn);
-                        try
-                        {
-                            conn.Open();
-                            cmd.ExecuteNonQuery();
-                            if (MessageBox.Show("Data berhasil ditambahkan!", "Succes") == DialogResult.OK) reset();
-                        }
-                        catch (SqlException ex)
-                        {
-                            MessageBox.Show(ex.Message);
-                        }
-                        finally
-                        {
-                            conn.Close();
-                        }
-                    }
                 }
             }
-            conn.Close();
         }
 
         void reset()
