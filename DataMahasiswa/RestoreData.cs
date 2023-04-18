@@ -45,24 +45,19 @@ namespace DataMahasiswa
 
         private void buttonDeleteAll_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (MessageBox.Show($"Apakah anda ingin menghapus data?", "Alert", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    string query = $"DELETE FROM tb_guru WHERE idDeleted='True';";
 
-                    SqlCommand cmd = new SqlCommand(query, conn);
-
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-                    TampilData();
-                }
-            }
-            catch (Exception)
+            if (MessageBox.Show($"Apakah anda ingin menghapus data?", "Alert", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                MessageBox.Show("Tidak bisa didelete.", "Alert");
+                string query = $"DELETE FROM tb_guru WHERE isDeleted=1";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                TampilData();
             }
+
         }
 
         private void buttonRestore_Click(object sender, EventArgs e)
@@ -76,41 +71,28 @@ namespace DataMahasiswa
                     SqlCommand cmd = new SqlCommand(query, conn);
 
                     int dataPertama = dataGridView1.Rows.Count;
-                    int dataKedua = 0;
 
                     conn.Open();
-                    cmd.ExecuteScalar();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    TampilData();
+                    int dataKedua = dataGridView1.Rows.Count;
 
-                    query = "SELECT COUNT(*) AS total FROM tb_guru WHERE isDeleted = 1";
+                    int dataKembali = dataPertama - dataKedua;
 
-                    SqlDataReader dr = cmd.ExecuteReader();
-                    if (dr.Read()) dataKedua = (int)dr["total"];
-
-                    int dataYangDikembalikan = dataPertama - dataKedua;
-
-                    if (dataYangDikembalikan == 0 && dataGridView1.Rows.Count == 0)
+                    if (dataKembali > 0)
                     {
-                        MessageBox.Show("Tidak ada data yang dikembalikan", "Alert");
+                        MessageBox.Show($"Berhasil: {dataKembali}\nGagal: {dataKedua}", "Info");
                     }
-                    else if (dataYangDikembalikan > 0)
-                    {
-                        MessageBox.Show($"Berhasil: {dataYangDikembalikan}\nGagal: {dataGridView1.Rows.Count - dataYangDikembalikan}", "Info");
-                    }
-                    else if (dataGridView1.Rows.Count > 0 && dataYangDikembalikan == 0)
+                    else
                     {
                         MessageBox.Show("Data tidak bisa dikembalikan", "Alert");
                     }
-
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error");
-            }
-            finally
-            {
-                conn.Close();
-                TampilData();
             }
         }
     }
