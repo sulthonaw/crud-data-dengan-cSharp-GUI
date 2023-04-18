@@ -75,16 +75,28 @@ namespace DataMahasiswa
 
                     SqlCommand cmd = new SqlCommand(query, conn);
 
+                    int dataPertama = dataGridView1.Rows.Count;
+                    int dataKedua = 0;
+
                     conn.Open();
-                    int dataYangDikembalikan = cmd.ExecuteNonQuery() - 1;
+                    cmd.ExecuteScalar();
+
+                    query = "SELECT COUNT(*) AS total FROM tb_guru WHERE isDeleted = 1";
+
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.Read()) dataKedua = (int)dr["total"];
+
+                    int dataYangDikembalikan = dataPertama - dataKedua;
 
                     if (dataYangDikembalikan == 0 && dataGridView1.Rows.Count == 0)
                     {
                         MessageBox.Show("Tidak ada data yang dikembalikan", "Alert");
-                    } else if(dataYangDikembalikan > 0)
+                    }
+                    else if (dataYangDikembalikan > 0)
                     {
                         MessageBox.Show($"Berhasil: {dataYangDikembalikan}\nGagal: {dataGridView1.Rows.Count - dataYangDikembalikan}", "Info");
-                    } else if (dataGridView1.Rows.Count > 0 && dataYangDikembalikan == 0)
+                    }
+                    else if (dataGridView1.Rows.Count > 0 && dataYangDikembalikan == 0)
                     {
                         MessageBox.Show("Data tidak bisa dikembalikan", "Alert");
                     }

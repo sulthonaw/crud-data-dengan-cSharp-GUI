@@ -53,11 +53,6 @@ namespace DataMahasiswa
             this.panel5 = new System.Windows.Forms.Panel();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.labelTotalHalaman = new System.Windows.Forms.Label();
             this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +61,11 @@ namespace DataMahasiswa
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.labelTotalHalaman = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -140,7 +140,7 @@ namespace DataMahasiswa
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(174, 16);
             this.textBoxSearch.TabIndex = 8;
-            this.textBoxSearch.Text = "Seacrh";
+            this.textBoxSearch.Text = "Search";
             // 
             // panel1
             // 
@@ -397,7 +397,7 @@ namespace DataMahasiswa
             dataGridViewCellStyle1.NullValue = null;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
@@ -445,60 +445,6 @@ namespace DataMahasiswa
             this.dataGridView1.Size = new System.Drawing.Size(832, 292);
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel1.Controls.Add(this.label4);
-            this.flowLayoutPanel1.Controls.Add(this.comboBox1);
-            this.flowLayoutPanel1.Controls.Add(this.label5);
-            this.flowLayoutPanel1.Controls.Add(this.labelTotalHalaman);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(603, 523);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(257, 27);
-            this.flowLayoutPanel1.TabIndex = 16;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.25F);
-            this.label4.Location = new System.Drawing.Point(3, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 19);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Halaman";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(72, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 13;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 10.25F);
-            this.label5.Location = new System.Drawing.Point(199, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(32, 19);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "dari";
-            // 
-            // labelTotalHalaman
-            // 
-            this.labelTotalHalaman.AutoSize = true;
-            this.labelTotalHalaman.Font = new System.Drawing.Font("Segoe UI", 10.25F);
-            this.labelTotalHalaman.Location = new System.Drawing.Point(237, 0);
-            this.labelTotalHalaman.Name = "labelTotalHalaman";
-            this.labelTotalHalaman.Size = new System.Drawing.Size(17, 19);
-            this.labelTotalHalaman.TabIndex = 16;
-            this.labelTotalHalaman.Text = "0";
             // 
             // delete
             // 
@@ -597,6 +543,60 @@ namespace DataMahasiswa
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel1.Controls.Add(this.label4);
+            this.flowLayoutPanel1.Controls.Add(this.comboBox1);
+            this.flowLayoutPanel1.Controls.Add(this.label5);
+            this.flowLayoutPanel1.Controls.Add(this.labelTotalHalaman);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(603, 523);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(257, 27);
+            this.flowLayoutPanel1.TabIndex = 16;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            this.label4.Location = new System.Drawing.Point(3, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 19);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Halaman";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(72, 3);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 13;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            this.label5.Location = new System.Drawing.Point(199, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(32, 19);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "dari";
+            // 
+            // labelTotalHalaman
+            // 
+            this.labelTotalHalaman.AutoSize = true;
+            this.labelTotalHalaman.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            this.labelTotalHalaman.Location = new System.Drawing.Point(237, 0);
+            this.labelTotalHalaman.Name = "labelTotalHalaman";
+            this.labelTotalHalaman.Size = new System.Drawing.Size(17, 19);
+            this.labelTotalHalaman.TabIndex = 16;
+            this.labelTotalHalaman.Text = "0";
+            // 
             // Home
             // 
             this.BackColor = System.Drawing.Color.White;
@@ -687,12 +687,14 @@ namespace DataMahasiswa
             dataGridView1.DataSource = table;
 
             conn.Close();
-            IndexPagination();
+
             TotalData();
         }
 
         private void IndexPagination()
         {
+            comboBox1.Text = "1";
+
             string query;
             int totalGuru = 0;
             double totalHalaman;
@@ -708,6 +710,7 @@ namespace DataMahasiswa
             conn.Close();
 
             totalHalaman = Math.Ceiling(Convert.ToDouble(totalGuru) / Convert.ToDouble(_dataPerHalaman));
+
 
             comboBox1.Items.Clear();
 
@@ -746,6 +749,7 @@ namespace DataMahasiswa
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     conn.Close();
+                    IndexPagination();
                     TampilDataDenganPagination();
                 }
             }
@@ -762,6 +766,7 @@ namespace DataMahasiswa
         {
             new RestoreData().ShowDialog();
             TampilDataDenganPagination();
+            IndexPagination();
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
