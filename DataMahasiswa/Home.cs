@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,32 +35,34 @@ namespace DataMahasiswa
             this.labelTotalData = new System.Windows.Forms.Label();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panelBoder = new System.Windows.Forms.Panel();
             this.buttonDashboard = new System.Windows.Forms.Button();
             this.buttonProject = new System.Windows.Forms.Button();
             this.buttonHome = new System.Windows.Forms.Button();
             this.buttonLogout = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelBorder = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.labelTotalHalaman = new System.Windows.Forms.Label();
+            this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nip = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nama = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,6 +72,7 @@ namespace DataMahasiswa
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -155,51 +159,6 @@ namespace DataMahasiswa
             this.panel1.Size = new System.Drawing.Size(223, 562);
             this.panel1.TabIndex = 10;
             // 
-            // button3
-            // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.button3.Location = new System.Drawing.Point(0, 295);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(223, 41);
-            this.button3.TabIndex = 16;
-            this.button3.Text = "Reporting";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.button2.Location = new System.Drawing.Point(0, 254);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(223, 41);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Users";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.25F);
-            this.button1.Location = new System.Drawing.Point(0, 213);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(223, 41);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Task";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // panelBoder
             // 
             this.panelBoder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -282,12 +241,57 @@ namespace DataMahasiswa
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(21, 30);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 17.25F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(21, 43);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(162, 37);
+            this.label2.Size = new System.Drawing.Size(136, 31);
             this.label2.TabIndex = 11;
             this.label2.Text = "Admin App";
+            // 
+            // button3
+            // 
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.button3.Location = new System.Drawing.Point(0, 295);
+            this.button3.Name = "button3";
+            this.button3.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.button3.Size = new System.Drawing.Size(223, 41);
+            this.button3.TabIndex = 16;
+            this.button3.Text = "Reporting";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.button2.Location = new System.Drawing.Point(0, 254);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(223, 41);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "Users";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.button1.Location = new System.Drawing.Point(0, 213);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(223, 41);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Task";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -310,9 +314,6 @@ namespace DataMahasiswa
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Controls.Add(this.label4);
-            this.panel4.Controls.Add(this.comboBox1);
             this.panel4.Controls.Add(this.panel6);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.buttonSearch);
@@ -320,45 +321,13 @@ namespace DataMahasiswa
             this.panel4.Controls.Add(this.buttonInsert);
             this.panel4.Controls.Add(this.buttonRestore);
             this.panel4.Controls.Add(this.dataGridView1);
+            this.panel4.Controls.Add(this.flowLayoutPanel1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(223, 14);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(25, 0, 25, 0);
             this.panel4.Size = new System.Drawing.Size(888, 562);
             this.panel4.TabIndex = 12;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 10.25F);
-            this.label5.Location = new System.Drawing.Point(816, 518);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 19);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "dari 0";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.25F);
-            this.label4.Location = new System.Drawing.Point(604, 518);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 19);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Halaman";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "1",
-            "1",
-            "1"});
-            this.comboBox1.Location = new System.Drawing.Point(681, 517);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 13;
             // 
             // panel6
             // 
@@ -371,6 +340,14 @@ namespace DataMahasiswa
             this.panel6.Padding = new System.Windows.Forms.Padding(3);
             this.panel6.Size = new System.Drawing.Size(190, 70);
             this.panel6.TabIndex = 12;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(157, 17);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(0, 13);
+            this.label6.TabIndex = 7;
             // 
             // label3
             // 
@@ -437,11 +414,11 @@ namespace DataMahasiswa
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewButtonColumn1,
-            this.dataGridViewButtonColumn2,
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
+            this.delete,
+            this.edit,
+            this.id,
+            this.nip,
+            this.nama,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
@@ -469,17 +446,63 @@ namespace DataMahasiswa
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // label6
+            // flowLayoutPanel1
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(157, 17);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 13);
-            this.label6.TabIndex = 7;
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanel1.Controls.Add(this.label4);
+            this.flowLayoutPanel1.Controls.Add(this.comboBox1);
+            this.flowLayoutPanel1.Controls.Add(this.label5);
+            this.flowLayoutPanel1.Controls.Add(this.labelTotalHalaman);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(603, 523);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(257, 27);
+            this.flowLayoutPanel1.TabIndex = 16;
             // 
-            // dataGridViewButtonColumn1
+            // label4
             // 
-            this.dataGridViewButtonColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            this.label4.Location = new System.Drawing.Point(3, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 19);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Halaman";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(72, 3);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 13;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            this.label5.Location = new System.Drawing.Point(199, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(32, 19);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "dari";
+            // 
+            // labelTotalHalaman
+            // 
+            this.labelTotalHalaman.AutoSize = true;
+            this.labelTotalHalaman.Font = new System.Drawing.Font("Segoe UI", 10.25F);
+            this.labelTotalHalaman.Location = new System.Drawing.Point(237, 0);
+            this.labelTotalHalaman.Name = "labelTotalHalaman";
+            this.labelTotalHalaman.Size = new System.Drawing.Size(17, 19);
+            this.labelTotalHalaman.TabIndex = 16;
+            this.labelTotalHalaman.Text = "0";
+            // 
+            // delete
+            // 
+            this.delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.Maroon;
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
@@ -487,63 +510,63 @@ namespace DataMahasiswa
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Maroon;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewButtonColumn1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewButtonColumn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dataGridViewButtonColumn1.Frozen = true;
-            this.dataGridViewButtonColumn1.HeaderText = "Delete";
-            this.dataGridViewButtonColumn1.MinimumWidth = 70;
-            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-            this.dataGridViewButtonColumn1.ReadOnly = true;
-            this.dataGridViewButtonColumn1.Text = "Delete";
-            this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
-            this.dataGridViewButtonColumn1.Width = 70;
+            this.delete.DefaultCellStyle = dataGridViewCellStyle3;
+            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.delete.Frozen = true;
+            this.delete.HeaderText = "Delete";
+            this.delete.MinimumWidth = 70;
+            this.delete.Name = "delete";
+            this.delete.ReadOnly = true;
+            this.delete.Text = "Delete";
+            this.delete.UseColumnTextForButtonValue = true;
+            this.delete.Width = 70;
             // 
-            // dataGridViewButtonColumn2
+            // edit
             // 
-            this.dataGridViewButtonColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewButtonColumn2.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewButtonColumn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.dataGridViewButtonColumn2.Frozen = true;
-            this.dataGridViewButtonColumn2.HeaderText = "Edit";
-            this.dataGridViewButtonColumn2.MinimumWidth = 70;
-            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
-            this.dataGridViewButtonColumn2.ReadOnly = true;
-            this.dataGridViewButtonColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewButtonColumn2.Text = "Edit";
-            this.dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
-            this.dataGridViewButtonColumn2.Width = 70;
+            this.edit.DefaultCellStyle = dataGridViewCellStyle4;
+            this.edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.edit.Frozen = true;
+            this.edit.HeaderText = "Edit";
+            this.edit.MinimumWidth = 70;
+            this.edit.Name = "edit";
+            this.edit.ReadOnly = true;
+            this.edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.edit.Text = "Edit";
+            this.edit.UseColumnTextForButtonValue = true;
+            this.edit.Width = 70;
             // 
-            // dataGridViewTextBoxColumn1
+            // id
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
             // 
-            // dataGridViewTextBoxColumn2
+            // nip
             // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "nip";
-            this.dataGridViewTextBoxColumn2.FillWeight = 294.7369F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "NIP";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 120;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 120;
+            this.nip.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.nip.DataPropertyName = "nip";
+            this.nip.FillWeight = 294.7369F;
+            this.nip.HeaderText = "NIP";
+            this.nip.MinimumWidth = 120;
+            this.nip.Name = "nip";
+            this.nip.ReadOnly = true;
+            this.nip.Width = 120;
             // 
-            // dataGridViewTextBoxColumn3
+            // nama
             // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "nama";
-            this.dataGridViewTextBoxColumn3.FillWeight = 21.92372F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Nama";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 100;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.nama.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nama.DataPropertyName = "nama";
+            this.nama.FillWeight = 21.92372F;
+            this.nama.HeaderText = "Nama";
+            this.nama.MinimumWidth = 100;
+            this.nama.Name = "nama";
+            this.nama.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -598,6 +621,8 @@ namespace DataMahasiswa
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -606,7 +631,6 @@ namespace DataMahasiswa
 
         private void TampilData()
         {
-
             string query = "EXEC TampilData";
 
             SqlCommand cmd = new SqlCommand(query, conn);
@@ -621,12 +645,15 @@ namespace DataMahasiswa
             dataGridView1.DataSource = table;
 
             conn.Close();
+        }
 
+        private void TotalData()
+        {
             try
             {
                 conn.Open();
-                query = "SELECT totalGuru FROM tb_total";
-                cmd = new SqlCommand(query, conn);
+                string query = "SELECT totalGuru FROM tb_total";
+                SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read()) labelTotalData.Text = dr["totalGuru"].ToString();
             }
@@ -640,22 +667,75 @@ namespace DataMahasiswa
             }
         }
 
+        private static int _dataPerHalaman = 10;
+
+        private void TampilDataDenganPagination(int selectPage = 1)
+        {
+            int indexData = (selectPage - 1) * _dataPerHalaman;
+
+            string query = $"SELECT * FROM tb_guru WHERE isDeleted = 0 ORDER BY updatedAt DESC OFFSET {indexData} ROWS FETCH NEXT {_dataPerHalaman} ROWS ONLY;";
+
+            SqlCommand cmd = new SqlCommand(query, conn);
+
+            conn.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            DataTable table = new DataTable();
+            table.Load(reader);
+
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.DataSource = table;
+
+            conn.Close();
+            IndexPagination();
+            TotalData();
+        }
+
+        private void IndexPagination()
+        {
+            string query;
+            int totalGuru = 0;
+            double totalHalaman;
+
+            _dataPerHalaman = 10;
+
+            query = "SELECT totalGuru FROM tb_total;";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            conn.Open();
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read()) totalGuru = Convert.ToInt32(dr["totalGuru"]);
+            dr.Close();
+            conn.Close();
+
+            totalHalaman = Math.Ceiling(Convert.ToDouble(totalGuru) / Convert.ToDouble(_dataPerHalaman));
+
+            comboBox1.Items.Clear();
+
+            for (int i = 1; i <= totalHalaman; i++)
+            {
+                comboBox1.Items.Add(i);
+            }
+
+            labelTotalHalaman.Text = totalHalaman.ToString();
+        }
+
         private void Home_Load(object sender, EventArgs e)
         {
-            TampilData();
+            TampilDataDenganPagination(1);
+            IndexPagination();
         }
 
         private void buttonInsert_Click(object sender, EventArgs e)
         {
             new TambahData().ShowDialog();
-            TampilData();
+            TampilDataDenganPagination();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 0)
             {
-                bool ms = MessageBox.Show($"Apakah anda ingin menghapus data {dataGridView1.Rows[e.RowIndex].Cells["Nama"].Value.ToString()}", "Alert", MessageBoxButtons.YesNo) == DialogResult.Yes;
+                bool ms = MessageBox.Show($"Apakah anda ingin menghapus data {dataGridView1.Rows[e.RowIndex].Cells["nama"].Value.ToString()}", "Alert", MessageBoxButtons.YesNo) == DialogResult.Yes;
 
                 if (ms)
                 {
@@ -666,23 +746,22 @@ namespace DataMahasiswa
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     conn.Close();
-                    TampilData();
+                    TampilDataDenganPagination();
                 }
-
             }
             else if (e.ColumnIndex == 1)
             {
                 string dataID = dataGridView1.Rows[e.RowIndex].Cells["id"].Value.ToString();
                 string dataNIP = dataGridView1.Rows[e.RowIndex].Cells["nip"].Value.ToString();
                 new UpdateData(dataID, dataNIP).ShowDialog();
-                TampilData();
+                TampilDataDenganPagination();
             }
         }
 
         private void buttonRestore_Click(object sender, EventArgs e)
         {
             new RestoreData().ShowDialog();
-            TampilData();
+            TampilDataDenganPagination();
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
@@ -708,7 +787,12 @@ namespace DataMahasiswa
 
         private void label1_Click(object sender, EventArgs e)
         {
-            TampilData();
+            TampilDataDenganPagination();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TampilDataDenganPagination(Convert.ToInt32(comboBox1.SelectedItem));
         }
     }
 }
